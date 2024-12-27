@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import java.net.URL?>
+<AnchorPane fx:id="mainhomepane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lyc.lycmcu.HomeController" stylesheets="@styles/navigation.css">
+    <children>
+        <AnchorPane fx:id="leftpane" prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: #d21a1a;">
+            <children>
+                <Button fx:id="homebtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="130.0" onAction="#loadScene"  prefHeight="40.0" prefWidth="230.0" text="Home" textFill="WHITE" styleClass="navigation-button">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="resourcesbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="180.0" onAction="#loadScene"  opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Movie Resources" textFill="WHITE" styleClass="navigation-button">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="musicbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="230.0" onAction="#loadScene" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Marvel Music" textFill="WHITE" styleClass="navigation-button">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="rewardbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="280.0" onAction="#loadScene" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Reward" textFill="WHITE" styleClass="navigation-button">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="logoutbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="330.0" onAction="#logOut" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="WHITE" styleClass="navigation-button">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label layoutX="73.0" layoutY="25.0" text="LYC's MCU" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Line endX="230.0" fill="WHITE" layoutX="10.0" layoutY="60.0" opacity="0.85" stroke="WHITE" strokeLineCap="ROUND" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="250.0" prefHeight="700.0" prefWidth="950.0">
+            <children>
+                <AnchorPane fx:id="toppane" prefHeight="35.0" prefWidth="950.0" style="-fx-background-color: #d21a1a;">
+                    <children>
+                        <Label layoutX="410.0" layoutY="8.0" text="DASHBOARD" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <HBox layoutX="880.0" prefHeight="35.0">
+                            <children>
+                                <Button fx:id="minimisebtn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" text="_" />
+                                <Button fx:id="closebtn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" text="X" />
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="20.0" layoutY="200.0" prefHeight="480.0" prefWidth="910.0" styleClass="tiles">
+                    <children>
+                        <TabPane fx:id="tabpane" prefHeight="480.0" prefWidth="910.0" rotateGraphic="true" >
+                            <tabs>
+                                <!-- Screen 1 Tab -->
+                                <Tab text="Stage 1">
+                                    <content>
+                                        <AnchorPane>
+                                            <children>
+                                                <ScrollPane fx:id="stage1ScrollPane" fitToWidth="true" prefHeight="442.0" prefWidth="910.0" style="-fx-background-color: transparent;" vbarPolicy="ALWAYS">
+                                                    <content>
+                                                        <VBox fx:id="stage1Content" spacing="20" style="-fx-padding: 20;" prefHeight="1000.0">
+                                                            <!-- 标题 -->
+                                                            <Label text="漫威电影宇宙第一阶段" style="-fx-font-size: 24; -fx-padding: 0 0 10 0;" />
+
+                                                            <!-- 钢铁侠1 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Ironman1Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="钢铁侠 (2008)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：乔恩·费儒" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：小罗伯特·唐尼、格温妮斯·帕特洛、泰伦斯·霍华德、杰夫·布里吉斯" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="斯塔克军火公司新任掌门人托尼•斯塔克等一众人在前往中东为军方展示新型武器的途中，遭到恐怖分子袭击。逃脱的托尼改进了钢铁盔甲，制造了另一块聚变能源，成为真正的钢铁侠，与坏蛋开展斗争。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 无敌浩克 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="HulkPoster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="无敌浩克 (2008)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：路易斯·莱特尔" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：爱德华·诺顿、丽芙·泰勒、蒂姆·罗斯、威廉·赫特" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="影片主要讲述了布鲁斯·班纳一方面要躲避军方的追捕，另一方面也在寻求控制愤怒的方法，同时还要面对一股强大邪恶势力威胁的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 钢铁侠2 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Ironman2Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="钢铁侠2 (2010)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：乔恩·费儒" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：小罗伯特·唐尼、格温妮斯·帕特洛、唐·钱德尔、斯嘉丽·约翰逊、米基·洛克 " style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片主要讲述了托尼成了钢铁侠之后又迎来了三个新的问题，来自汉默工业的竞争、来自世仇伊万的复仇，以及他自身的钯中毒，他最终将这些问题一一解决的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 雷神1 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Thor1Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="雷神 (2011)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：肯尼思·布拉纳" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：克里斯·海姆斯沃斯、汤姆·希德勒斯顿、娜塔丽·波特曼、安东尼·霍普金斯" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片讲述了北欧神话中掌控着暴风和闪电的雷神因鲁莽的举动点燃了古代战争的战火，作为惩罚，他被发配到地球并被强迫生活在人类中间的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 美国队长1 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="CaptainAmerica1Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="美国队长：复仇者先锋 (2011)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：乔·庄斯顿" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：克里斯·埃文斯、海莉·阿特维尔、塞巴斯蒂安·斯坦、雨果·维文" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片以二战时期为背景，讲述了一个叫做史蒂夫·罗杰斯的年轻人参加美军秘密试验，在被注射了超级士兵的血清后成为“美国队长”，与纳粹展开对抗的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 复仇者联盟1 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Avengers1Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="复仇者联盟 (2012)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：乔斯·韦登" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="主演：小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯、格温妮斯·帕特洛、斯特兰·斯卡斯加德、保罗·贝坦尼、艾什莉·约翰逊、鲍沃斯·布斯" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片是《复仇者联盟》系列的第一部作品，是漫威电影宇宙第一阶段的收官之作，讲述了在面对强大邪恶势力对地球造成致命威胁时，神盾局指挥官尼克·弗瑞将钢铁侠、美国队长、雷神托尔、绿巨人、黑寡妇和鹰眼六大超级英雄集结在一起，组成复仇者联盟，战胜邪恶势力，保证地球安全的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+                                                        </VBox>
+                                                    </content>
+                                                </ScrollPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <!-- Screen 2 Tab -->
+                                <Tab text="Stage 2">
+                                    <content>
+                                        <AnchorPane>
+                                            <children>
+                                                <ScrollPane fx:id="stage2ScrollPane" fitToWidth="true" prefHeight="442.0" prefWidth="910.0" style="-fx-background-color: transparent;" vbarPolicy="ALWAYS">
+                                                    <content>
+                                                        <VBox fx:id="stage2Content" spacing="20" style="-fx-padding: 20;" prefHeight="1000.0">
+                                                            <!-- 标题 -->
+                                                            <Label text="漫威电影宇宙第二阶段" style="-fx-font-size: 24; -fx-padding: 0 0 10 0;" />
+
+                                                            <!-- 钢铁侠3 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Ironman3Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="钢铁侠3 (2013)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：沙恩·布莱克" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：小罗伯特·唐尼、格温妮斯·帕特洛、唐·钱德尔、盖·皮尔斯、丽贝卡·豪尔、斯蒂芬妮·莎丝泰克、詹姆斯·贝吉·戴尔、乔恩·费儒" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片讲述了托尼·斯塔克的生活被敌人毁灭殆尽，无路可退的他必须依靠精良的高科技装备以及过人才智，保护自己和身边最亲近的人，同时找出真正的幕后元凶的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 雷神2 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Thor2Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="雷神2：黑暗世界 (2013)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：艾伦·泰勒" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：克里斯·海姆斯沃斯、娜塔莉·波特曼、汤姆·希德勒斯顿、安东尼·霍普金斯、克里斯托弗·埃克莱斯顿" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="影片主要讲述了为了阻止黑暗精灵利用以太粒子之力摧毁宇宙，雷神索尔与弟弟洛基及地球人联手反抗黑暗精灵的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 美国队长2 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="CaptainAmerica2Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="美国队长2：冬日战士 (2014)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：安东尼·罗素、乔·罗素" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="主演：克里斯·埃文斯、斯嘉丽·约翰逊、塞巴斯蒂安·斯坦、安东尼·麦凯、寇碧·史莫德斯、弗兰克·格里罗、艾米丽·万凯普、海莉·阿特维尔、罗伯特·雷德福、塞缪尔·杰克逊、托比·琼斯、麦克斯米利安诺·贺南德兹" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片讲述了在神盾局局长遇袭、前神盾局长出山、天空母舰再度损毁的情况下，美国队长在这片令人震撼的“废墟”当中，力挽狂澜的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 银河护卫队1 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="GuardiansoftheGalaxy1Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="银河护卫队 (2014)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：詹姆斯·古恩" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：克里斯·帕拉特、佐伊·索尔达娜、布莱德利·库珀、戴夫·巴蒂斯塔、范·迪塞尔、李·佩斯、斯坦·李" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片主要讲述因偷走神秘球体而被疯狂追杀的“星爵”彼得·奎尔被迫结盟四个格格不入的乌合之众——卡魔拉、火箭浣熊、树人格鲁特和毁灭者德拉克斯，他们必须破釜沉舟决一死战，才可能拯救整个银河系。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 复仇者联盟2 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Avengers2Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="复仇者联盟2：奥创纪元 (2015)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：乔斯·韦登" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="主演：小罗伯特·唐尼、克里斯·海姆斯沃斯、马克·鲁法洛、克里斯·埃文斯、斯嘉丽·约翰逊、杰瑞米·雷纳、唐·钱德尔、亚伦·泰勒-约翰逊、伊丽莎白·奥尔森、保罗·贝坦尼、寇碧·史莫德斯、詹姆斯·斯派德、塞缪尔·杰克逊" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片讲述当钢铁侠试图启动处于休眠状态的维持和平计划时，计划出了差错。于是，在地球面临生死存亡的紧急关头时，超级英雄们挺身而出承担起拯救世界的重任，他们将阻止可怕的人工智能机器人“奥创”制定恐怖计划。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 蚁人1 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Antman1Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="蚁人 (2015)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：佩顿·里德" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="主演：保罗·路德、伊万杰琳·莉莉、迈克尔·道格拉斯、寇瑞·斯托尔、朱迪·格雷尔、迈克尔·佩纳、艾比·莱德·弗特森、鲍比·坎纳瓦尔、大卫·达斯马齐连、海莉·阿特维尔、约翰·斯拉特里、安东尼·麦凯" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片讲述了斯科特·朗拥有身体变小的力量，必须接受自己的身份并帮助他的导师——生化学家汉克·皮姆保护他所发明的蚁人战服，在敌人的威胁下，皮姆与朗必须精心策划并执行一场惊天骗局来拯救世界的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+                                                        </VBox>
+                                                    </content>
+                                                </ScrollPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <!-- Screen 3 Tab -->
+                                <Tab text="Stage 3">
+                                    <content>
+                                        <AnchorPane>
+                                            <children>
+                                                <ScrollPane fx:id="stage3ScrollPane" fitToWidth="true" prefHeight="442.0" prefWidth="910.0" style="-fx-background-color: transparent;" vbarPolicy="ALWAYS">
+                                                    <content>
+                                                        <VBox fx:id="stage3Content" spacing="20" style="-fx-padding: 20;" prefHeight="1000.0">
+                                                            <!-- 标题 -->
+                                                            <Label text="漫威电影宇宙第三阶段" style="-fx-font-size: 24; -fx-padding: 0 0 10 0;" />
+
+                                                            <!-- 美国队长3 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="CaptainAmerica3Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="美国队长3：内战 (2016)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：安东尼·罗素、乔·罗素" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：克里斯·埃文斯、小罗伯特·唐尼、斯嘉丽·约翰逊、塞巴斯蒂安·斯坦、安东尼·麦凯、唐·钱德尔、杰瑞米·雷纳、查德维克·博斯曼、保罗·贝坦尼、伊丽莎白·奥尔森、保罗·路德" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片背景故事承接于《复仇者联盟2：奥创纪元》事件的余波，讲述了奥创事件后引发的一系列政治问题导致复仇者联盟内部矛盾激化，最终完全分裂的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 奇异博士1 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="DoctorStrange1Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="奇异博士 (2016)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：斯科特·德瑞克森" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：本尼迪克特·康伯巴奇、蒂尔达·斯文顿、切瓦特·埃加福特、瑞秋·麦克亚当斯、麦斯·米科尔森、本尼迪特·王" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片是讲述了外科手术专家史蒂芬·斯特兰奇在一次车祸后，无法握住手术刀，他远赴尼泊尔遇到了莫度男爵，并得到至尊魔法师的帮助，开始接触和学习鲜为人知的玄学、以及多维空间世界的学问，最后变身奇异博士，利用超自然能力和神器来保护着世界的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 银河护卫队2 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="GuardiansoftheGalaxy2Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="银河护卫队2 (2017)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：詹姆斯·古恩" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：克里斯·帕拉特、佐伊·索尔达娜、布莱德利·库珀、范·迪塞尔、戴夫·巴蒂斯塔、庞·克莱门捷夫、迈克尔·鲁克、凯伦·吉兰、库尔特·拉塞尔、伊丽莎白·德比齐" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片根据漫威漫画改编，讲述了护卫队成员穿越宇宙，继续在外太空的冒险之旅，他们必须共同作战，守护彼此，同时要解开彼得·奎尔的身世之谜的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 蜘蛛侠：英雄归来 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Spiderman1Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="蜘蛛侠：英雄归来 (2017)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：乔·沃茨" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：汤姆·赫兰德、迈克尔·基顿、小罗伯特·唐尼、玛丽莎·托梅、雅各·巴塔伦、乔恩·费儒、劳拉·海瑞尔、赞达亚·科尔曼、托尼·雷沃罗利、博基姆·伍德拜因、迈克尔·哲努斯、罗根·马歇尔-格林、唐纳德·格洛沃" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片主要讲述了少年蜘蛛侠彼得·帕克在钢铁侠托尼·斯塔克的指导下，逐渐成长为一名真正的超级英雄的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 雷神3 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Thor3Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="雷神3：诸神黄昏 (2017)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：塔伊加·维迪提" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：小克里斯·海姆斯沃斯、汤姆·希德勒斯顿、马克·鲁法洛、凯特·布兰切特、泰莎·汤普森、伊德瑞斯·艾尔巴、杰夫·高布伦、卡尔·厄本、安东尼·霍普金斯" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片讲述了失去雷霆之锤的索尔被囚禁在宇宙的另一端，他不得不想方设法尽早赶回阿斯加德，阻止家园的毁灭和阿斯加德文明的终结的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 黑豹1 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="BlackPanther1Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="黑豹 (2018)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：瑞恩·库格勒" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：查德维克·博斯曼、迈克尔·B·乔丹、露皮塔·尼永奥、达娜·古瑞拉、马丁·弗瑞曼、丹尼尔·卡卢亚、莱蒂希娅·赖特" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片背景承接《美国队长3》，讲述了黑豹回到瓦坎达担任国王，然而当过去的敌人再次出现，他被卷入一场正邪大战当中的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 复仇者联盟3 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Avengers3Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="复仇者联盟3：无限战争 (2018)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：安东尼·罗素、乔·罗素" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：小罗伯特·唐尼、乔什·布洛林、克里斯·埃文斯、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、马克·鲁法洛、本尼迪克特·康伯巴奇、克里斯·帕拉特" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片讲述了在雷神一行遭遇灭霸军团袭击洛基遇害，空间宝石落入灭霸之手时，复仇者联盟和他们的盟友必须愿意牺牲一切，并试图在灭霸的闪电战毁灭宇宙之前击败强大的灭霸。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 蚁人2 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Antman2Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="蚁人2：黄蜂女现身 (2018)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：佩顿·里德" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：保罗·路德、伊万杰琳·莉莉、迈克尔·道格拉斯、米歇尔·菲佛、汉娜·乔恩-卡门、迈克尔·佩纳" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片讲述蚁人斯科特在背负着蚁人职责的同时努力过好自己的生活，但二代黄蜂女霍普·凡·戴恩和汉克·皮姆博士又向他传达了一项紧急任务。斯科特再次穿上蚁人战衣，与黄蜂女并肩作战的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 惊奇队长1 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="CaptainMarvel1Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="惊奇队长 (2019)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：瑞恩·库格勒" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：布丽·拉尔森、塞缪尔·杰克逊、本·门德尔森、裘德·洛、安妮特·贝宁、嘉玛·陈、拉什纳·林奇、克拉克·格雷格、李·佩斯、杰曼·翰苏" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片讲述当两个外星种族的星际战争降临地球，丹弗斯发现自己和为数不多的盟友已经身陷这场混乱中心的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 复仇者联盟4 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Avengers4Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="复仇者联盟4：终局之战 (2019)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：安东尼·罗素、乔·罗素" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片讲述了在《复仇者联盟3：无限战争》的毁灭性事件过后，复仇者联盟在剩余盟友的帮助下再一次集结，逆转过去，重新创造希望的故事。这部电影是给所有漫威迷的一个礼物！" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 蜘蛛侠：英雄远征 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Spiderman2Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="蜘蛛侠：英雄远征 (2019)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：乔·沃茨" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：汤姆·赫兰德、杰克·吉伦哈尔、塞缪尔·杰克逊" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片承接电影《复仇者联盟4：终局之战》，讲述了蜘蛛侠彼得·帕克要和同学们一起去欧洲旅行，前神盾局局长尼克·弗瑞邀请他帮忙一起去解决“元素众”，彼得·帕克再次开始行侠仗义的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+                                                        </VBox>
+                                                    </content>
+                                                </ScrollPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Stage 4">
+                                    <content>
+                                        <AnchorPane>
+                                            <children>
+                                                <ScrollPane fx:id="stage4ScrollPane" fitToWidth="true" prefHeight="442.0" prefWidth="910.0" style="-fx-background-color: transparent;" vbarPolicy="ALWAYS">
+                                                    <content>
+                                                        <VBox fx:id="stage4Content" spacing="20" style="-fx-padding: 20;" prefHeight="1000.0">
+                                                            <!-- 标题 -->
+                                                            <Label text="漫威电影宇宙第四阶段" style="-fx-font-size: 24; -fx-padding: 0 0 10 0;" />
+
+                                                            <!-- 黑寡妇 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="BlackwidowPoster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="黑寡妇 (2021)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：凯特·绍特兰" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：小斯嘉丽·约翰逊、佛罗伦斯·珀、大卫·哈伯、蕾切尔·薇姿" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片讲述了黑寡妇卷入与自己过去相关的一场阴谋中，将直面那些更为黑暗经历的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 尚气与十环传奇 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="ShangChiPoster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="尚气与十环传奇 (2021)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：德斯汀·克里顿" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：刘思慕、梁朝伟、奥卡菲娜、杨紫琼、陈法拉" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="影片将故事时间设定在《复联4：终局之战》后，讲述尚气自幼接受父亲文武的铁血战斗培训，精通各种武术招式。长大后为了逃离家乡，他改名换姓展开新生活，认识了新挚友凯蒂，但仍然无法逃避过去的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 永恒族 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="EternalsPoster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="永恒族 (2021)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：赵婷" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：嘉玛·陈、理查德·麦登、安吉丽娜·朱莉、萨尔玛·海耶克、基特·哈灵顿、库梅尔·南贾尼、莉亚·麦克休、布莱恩·泰里·亨利、劳伦·利德洛夫、巴里·基奥汉、马东锡" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片讲述了百万年前，被称为“天神族”的外星生物族群创造出拥有超能力的永恒族和异变族，两个族群一直互相争斗，在此过程中，地球的永恒族逐步揭露“天神族”的阴谋，并为保卫地球而战的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 蜘蛛侠：英雄无归 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Spiderman3Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="蜘蛛侠：英雄无归 (2021)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：乔·沃茨" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：汤姆·赫兰德、赞达亚·科尔曼、本尼迪克特·康伯巴奇（其实不止这些哦）" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="该片承接《蜘蛛侠：英雄远征》，讲述了蜘蛛侠的生活因曝光身份而陷入混乱，甚至遭到了全世界民众的愤怒抗议，为改变这一切，蜘蛛侠前往寻求奇异博士的帮助，没料想，多元宇宙打开后更大的危机也随之而来的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 奇异博士2：疯狂多元宇宙 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="DoctorStrange2Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="奇异博士2：疯狂多元宇宙 (2022)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：山姆·雷米" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：本尼迪克特·康伯巴奇、瑞秋·麦克亚当斯、伊丽莎白·奥尔森、王汉斌" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片设定在《复仇者联盟4：终局之战》和《蜘蛛侠3：英雄无归》的事件之后，讲述了“奇异博士”施展禁忌咒语，开启多元宇宙，另一宇宙中的至尊奇异博士出现于主宇宙，威胁人类安全的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 雷神4 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Thor4Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="雷神4：爱与雷霆 (2022)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：佩顿·里德" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：克里斯·海姆斯沃斯、娜塔莉·波特曼、泰莎·汤普森" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="影片讲述了阿斯加德遭遇了巨大的危机，为了拯救阿斯加德的子民，雷神与前女友简·福斯特以及其他朋友展开的阻止屠神者格尔复仇的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 黑豹2 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="BlackPanther2Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="黑豹2：瓦坎达万岁 (2022)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：瑞恩·库格勒" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：莱蒂希娅·赖特、特诺切·韦尔塔、露皮塔·尼永奥、安吉拉·贝塞特" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片讲述了黑豹特查拉去世后，瓦坎达公主苏睿凭借自己的努力，快速成长，带领瓦坎达人民对抗海底王国亚特兰提斯的王子纳摩，保卫瓦坎达的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+                                                        </VBox>
+                                                    </content>
+                                                </ScrollPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Stage 5">
+                                    <content>
+                                        <AnchorPane>
+                                            <children>
+                                                <ScrollPane fx:id="stage5ScrollPane" fitToWidth="true" prefHeight="442.0" prefWidth="910.0" style="-fx-background-color: transparent;" vbarPolicy="ALWAYS">
+                                                    <content>
+                                                        <VBox fx:id="stage5Content" spacing="20" style="-fx-padding: 20;" prefHeight="1000.0">
+                                                            <!-- 标题 -->
+                                                            <Label text="漫威电影宇宙第五阶段" style="-fx-font-size: 24; -fx-padding: 0 0 10 0;" />
+
+                                                            <!-- 蚁人3 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Antman3Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="蚁人与黄蜂女：量子狂潮 (2023)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：佩顿·里德" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：保罗·路德、伊万杰琳·莉莉、迈克尔·道格拉斯、米歇尔·菲佛、凯瑟琳·纽顿、乔纳森·梅杰斯" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片讲述了蚁人斯科特·朗和黄蜂女霍普·凡·戴恩，与霍普的父母汉克·皮姆和珍妮特·凡·戴恩，以及斯科特的女儿凯茜一起误入量子领域，开始了一场超越他们想象极限的冒险。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 银河护卫队3 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="GuardiansoftheGalaxy3Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="银河护卫队3 (2023)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：詹姆斯·古恩" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：克里斯·帕拉特、佐伊·索尔达娜、布莱德利·库珀、戴夫·巴蒂斯塔、范·迪塞尔" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片是《银河护卫队》电影系列的完结篇，讲述“星爵”集结团队，为营救身负重伤的队友火箭浣熊而进行一项危险任务的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 惊奇队长2 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="CaptainMarvel2Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="惊奇队长2 (2023)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：尼娅·达科斯塔" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：克布丽·拉尔森、伊曼·韦拉尼、泰柔娜·派丽丝、塞缪尔·杰克逊" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片讲述了惊奇队长、莫妮卡·兰博和惊奇少女首度集结后，她们的超能力突然跨越太空产生纠缠，三人强强联手，组成“惊奇团队”，联手各自的超能力打败反派，拯救宇宙的故事。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 死侍与金刚狼 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Deadpool3Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="死侍与金刚狼 (2024)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：肖恩·利维" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：克瑞安·雷诺兹、休·杰克曼" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="该片主要讲述讲述韦德·威尔逊决定不再以死侍身份生活下去，但是在朋友、家人和整个世界都处于危险之中时，他决定重新出山，与金刚狼携手作战的故事 。" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 美国队长4 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="CaptainAmerica4Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="美国队长4：新世界秩序 (2025)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：朱利叶斯·约拿" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：安东尼·麦凯 （敬请期待）" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="800" text="电影未上映 预计北美2025年2月14日上映" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 雷霆特工队 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="ThunderboltsPoster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="雷霆特工队 (2025)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：杰克·施莱尔" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：弗洛伦丝·皮尤、哈里森·福特、大卫·哈伯、塞巴斯蒂安·斯坦、丹尼尔·布鲁赫、汉娜·乔恩-卡门、欧嘉·柯瑞兰寇、茱莉亚·路易斯-德瑞弗斯" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="电影未上映 预计北美2025年5月2日上映" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+                                                        </VBox>
+                                                    </content>
+                                                </ScrollPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Stage 6">
+                                    <content>
+                                        <AnchorPane>
+                                            <children>
+                                                <ScrollPane fx:id="stage6ScrollPane" fitToWidth="true" prefHeight="442.0" prefWidth="910.0" style="-fx-background-color: transparent;" vbarPolicy="ALWAYS">
+                                                    <content>
+                                                        <VBox fx:id="stage6Content" spacing="20" style="-fx-padding: 20;" prefHeight="1000.0">
+                                                            <!-- 标题 -->
+                                                            <Label text="漫威电影宇宙第六阶段" style="-fx-font-size: 24; -fx-padding: 0 0 10 0;" />
+
+                                                            <!-- 复仇者联盟5 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Avengers5Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="复仇者联盟5：毁灭之日 (2026)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：安东尼·罗素、乔·罗素" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="主演：安东尼·麦凯、小罗伯特·唐尼、佩德罗·帕斯卡、凡妮莎·柯比、约瑟夫·奎恩、艾邦·摩斯-巴克拉赫、杰瑞米·雷纳、本尼迪克特·康伯巴奇、保罗·路德、凯瑟琳·纽顿  (待定）" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="电影未上映 预计北美2026年5月1日上映" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 蜘蛛侠4 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Spiderman4Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="蜘蛛侠4（未命名） (2026)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：德斯汀·克里顿" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：汤姆·霍兰德" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="电影未上映 上映时间待定" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+
+                                                            <!-- 复仇者联盟6 -->
+                                                            <HBox spacing="30" alignment="CENTER_LEFT">
+                                                                <children>
+                                                                    <ImageView fx:id="Avengers6Poster" fitHeight="200.0" fitWidth="140.0" preserveRatio="true" />
+                                                                    <VBox spacing="10">
+                                                                        <Label text="复仇者联盟6：秘密战争 (2027)" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                                        <Label text="导演：安东尼·罗素、乔·罗素" style="-fx-font-size: 14;" />
+                                                                        <Label text="主演：待定" style="-fx-font-size: 14;" />
+                                                                        <Label wrapText="true" maxWidth="600" text="电影未上映 预计北美2027年5月7日上映" style="-fx-font-size: 14;" />
+                                                                    </VBox>
+                                                                </children>
+                                                            </HBox>
+                                                        </VBox>
+                                                    </content>
+                                                </ScrollPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </children>
+                    <effect>
+                        <DropShadow blurType="GAUSSIAN" height="1.0" radius="0.0" width="0.5" />
+                    </effect>
+                </AnchorPane>
+                <!-- p3面板 -->
+                <AnchorPane fx:id="p3" layoutX="26.0" layoutY="60.0" prefHeight="100.0" prefWidth="904.0" style="-fx-background-color: #EE712B;" styleClass="tiles">
+                    <children>
+                        <AnchorPane fx:id="p3shadow" layoutX="80.0" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ea6012;" />
+                        <Label fx:id="datelabel" layoutX="171.0" layoutY="26.0" prefHeight="49.0" prefWidth="562.0" text="Introduction to Marvel Movies" textFill="WHITE">
+                            <font>
+                                <Font size="38.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

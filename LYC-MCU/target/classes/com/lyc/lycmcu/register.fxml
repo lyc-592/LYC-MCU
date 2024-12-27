@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackpane" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lyc.lycmcu.RegisterController">
+    <children>
+        <AnchorPane fx:id="mainregisterpane" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: #d21a1a;">
+            <children>
+                <!-- 标题标签 -->
+                <Label layoutX="81.0" layoutY="62.0" text="Create a new account" textFill="WHITE">
+                    <font>
+                        <Font size="23.0" />
+                    </font>
+                </Label>
+                <!-- 用户名输入框 -->
+                <TextField fx:id="userfield" layoutX="26.0" layoutY="134.0" prefHeight="26.0" prefWidth="349.0" promptText="Username" style="-fx-text-fill: #000000; -fx-prompt-text-fill: #777777;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TextField>
+                <!-- 密码输入框 -->
+                <PasswordField fx:id="passfield" layoutX="26.0" layoutY="188.0" prefHeight="26.0" prefWidth="349.0" promptText="Password" style="-fx-text-fill: #000000; -fx-prompt-text-fill: #777777;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </PasswordField>
+                <!-- 确认密码输入框 -->
+                <PasswordField fx:id="confirmpassfield" layoutX="26.0" layoutY="239.0" prefHeight="26.0" prefWidth="349.0" promptText="Confirm your Password" style="-fx-text-fill: #000000; -fx-prompt-text-fill: #777777;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </PasswordField>
+                <!-- 注册按钮 -->
+                <Button fx:id="registerbtn" layoutX="160.0" layoutY="340.0" onAction="#registerUser" style="-fx-background-color: #FF5722; -fx-background-radius: 5; -fx-text-fill: WHITE;" text="Sign In">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <!-- 返回登录标签 -->
+                <Label fx:id="back" layoutX="259.0" layoutY="294.0" text="Return to login page" textFill="#ebebeb">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+                <!-- 错误信息标签 -->
+                <Label fx:id="errorlabel" layoutX="95.0" layoutY="390.0" text="Error! Incorrect Password Or Username" textFill="WHITE" visible="false" />
+                <!-- 进度条 -->
+                <ProgressBar fx:id="progressbar" layoutX="75.0" layoutY="430.0" prefHeight="3.0" prefWidth="256.0" visible="false" />
+                <HBox layoutX="330.0" prefHeight="35.0" prefWidth="70.0">
+                    <children>
+                        <Button fx:id="minimisebtn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" text="_" />
+                        <Button fx:id="closebtn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" text="X" />
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

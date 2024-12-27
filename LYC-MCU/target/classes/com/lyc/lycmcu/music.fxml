@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainmusicpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" stylesheets="@styles/navigation.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lyc.lycmcu.MusicController">
+    <children>
+        <AnchorPane fx:id="leftpane" prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: #d21a1a;">
+            <children>
+                <Button fx:id="homebtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="130.0" onAction="#loadScene" onMouseEntered="#btnHover" onMouseExited="#btnExit" prefHeight="40.0" prefWidth="230.0" styleClass="navigation-button" text="Home" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="resourcesbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="180.0" onAction="#loadScene" onMouseEntered="#btnHover" onMouseExited="#btnExit" opacity="0.8" prefHeight="40.0" prefWidth="230.0" styleClass="navigation-button" text="Movie Resources" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="musicbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="230.0" onAction="#loadScene" onMouseEntered="#btnHover" onMouseExited="#btnExit" opacity="0.8" prefHeight="40.0" prefWidth="230.0" styleClass="navigation-button" text="Marvel Music" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="rewardbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="280.0" onAction="#loadScene" onMouseEntered="#btnHover" onMouseExited="#btnExit" opacity="0.8" prefHeight="40.0" prefWidth="230.0" styleClass="navigation-button" text="Reward" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="logoutbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="330.0" onAction="#logOut" onMouseEntered="#btnHover" onMouseExited="#btnExit" opacity="0.8" prefHeight="40.0" prefWidth="230.0" styleClass="navigation-button" text="Log Out" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label layoutX="73.0" layoutY="25.0" text="LYC's MCU" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Line endX="230.0" fill="WHITE" layoutX="10.0" layoutY="60.0" opacity="0.85" stroke="WHITE" strokeLineCap="ROUND" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="250.0" prefHeight="700.0" prefWidth="950.0">
+            <children>
+                <AnchorPane fx:id="toppane" prefHeight="35.0" prefWidth="950.0" style="-fx-background-color: #d21a1a;">
+                    <children>
+                        <HBox layoutX="880.0" prefHeight="35.0">
+                            <children>
+                                <Button fx:id="minimisebtn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" text="_" />
+                                <Button fx:id="closebtn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" text="X" />
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+                <TextArea editable="false" layoutX="17.0" layoutY="132.0" prefHeight="198.0" prefWidth="920.0" text="使用说明：&#10;&#10;这是一个音乐文件转换功能区域。你可以将你喜欢的任何漫威电影的音乐下载下来。&#10;首先你需要拥有网易云音乐。这个功能可以把网易云音乐的缓存uc文件转换为mp3文件。即免费获取歌曲MP3文件的黑科技！&#10;你需要下载网易云音乐的客户端，在设置页面更改或者记住缓存目录的位置。在播放完一首歌后，在你缓存目录所在的文件中找到这首歌的uc文件，将文件上传即可。只能上传.uc文件。在保存时，需要自己输入想保存的音乐名。&#10;需要注意的是：在点击保存后，程序需要有大约10-20秒钟的时间来转换，在此期间程序其他功能可以正常使用，文件转换成功后会有系统提示！" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font></TextArea>
+                <Rectangle fill="transparent" height="154.0" layoutX="17.0" layoutY="396.0" stroke="black" strokeDashArray="10" width="920.0" />
+                <Label layoutX="438.0" layoutY="457.0" text="请上传uc文件" textFill="BLACK" />
+                <Button fx:id="uploadBtn" layoutX="443.0" layoutY="492.0" onAction="#uploadFile" text="上传文件" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

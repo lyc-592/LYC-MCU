@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainresourcespane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lyc.lycmcu.MovieResourcesController" stylesheets="@styles/navigation.css">
+    <children>
+        <AnchorPane fx:id="leftpane" prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: #d21a1a;">
+            <children>
+                <Button fx:id="homebtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="130.0" onAction="#loadScene" onMouseEntered="#btnHover" onMouseExited="#btnExit" prefHeight="40.0" prefWidth="230.0" text="Home" textFill="WHITE" styleClass="navigation-button">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="resourcesbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="180.0" onAction="#loadScene" onMouseEntered="#btnHover" onMouseExited="#btnExit" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Movie Resources" textFill="WHITE" styleClass="navigation-button">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="musicbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="230.0" onAction="#loadScene" onMouseEntered="#btnHover" onMouseExited="#btnExit" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Marvel Music" textFill="WHITE" styleClass="navigation-button">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="rewardbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="280.0" onAction="#loadScene" onMouseEntered="#btnHover" onMouseExited="#btnExit" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Reward" textFill="WHITE" styleClass="navigation-button">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="logoutbtn" alignment="TOP_LEFT" layoutX="10.0" layoutY="330.0" onAction="#logOut" onMouseEntered="#btnHover" onMouseExited="#btnExit" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="WHITE" styleClass="navigation-button">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label layoutX="73.0" layoutY="25.0" text="LYC's MCU" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Line endX="230.0" fill="WHITE" layoutX="10.0" layoutY="60.0" opacity="0.85" stroke="WHITE" strokeLineCap="ROUND" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="250.0" prefHeight="700.0" prefWidth="950.0">
+            <children>
+                <AnchorPane fx:id="toppane" prefHeight="35.0" prefWidth="950.0" style="-fx-background-color: #d21a1a;">
+                    <children>
+                        <HBox layoutX="880.0" prefHeight="35.0">
+                            <children>
+                                <Button fx:id="minimisebtn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" text="_" />
+                                <Button fx:id="closebtn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" text="X" />
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+
+                <!-- 搜索和筛选区域 -->
+                <HBox layoutX="20.0" layoutY="50.0" spacing="10.0" prefWidth="910.0">
+                    <TextField fx:id="searchField" promptText="输入电影名称" prefWidth="400.0" />
+                    <ComboBox fx:id="yearComboBox" promptText="选择年份" prefWidth="150.0" />
+                    <ComboBox fx:id="phaseComboBox" promptText="选择阶段" prefWidth="150.0" />
+                    <Button text="搜索" onAction="#searchMovies" />
+                </HBox>
+
+                <!-- 电影资源滚动面板 -->
+                <ScrollPane layoutX="20.0" layoutY="100.0" prefHeight="550.0" prefWidth="910.0"
+                            hbarPolicy="NEVER"
+                            vbarPolicy="AS_NEEDED">
+                    <FlowPane fx:id="movieContainer"
+                              hgap="10.0"
+                              vgap="10.0"
+                              prefWidth="890.0"
+                              prefWrapLength="890.0"/>
+                </ScrollPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

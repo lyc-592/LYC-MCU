@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="logoutpane" prefHeight="150.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lyc.lycmcu.LogoutController">
+    <children>
+        <AnchorPane prefHeight="35.0" prefWidth="405.0" style="-fx-background-color: #d11b1b;">
+            <children>
+            <Label layoutX="185.0" layoutY="6.0" text="提示" textFill="#1c1239">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            </children>
+            <effect>
+                <ColorAdjust contrast="0.1" />
+            </effect>
+        </AnchorPane>
+        <Label layoutX="113.0" layoutY="51.0" text="您确定要退出登录吗？" textFill="#1c1239">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="yesbtn" layoutX="95.0" layoutY="95.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleYesButton" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #FF5722; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-size: 19;">
+            <text>是</text>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="nobtn" layoutX="250.0" layoutY="95.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleNoButton" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #FF5722; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-size: 19;">
+            <text>否</text>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+    </children>
+</AnchorPane>
